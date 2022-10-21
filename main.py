@@ -25,7 +25,7 @@ if __name__=='__main__':
     Q_gt, R_gt = linalg.qr(A)
     print('\033[1;34;34m Q_gt: \033[1;m \n'+ str(Q_gt))
     print('\033[1;34;34m R_gt: \033[1;m \n'+ str(R_gt))
-    print("\033[1;34;34m Verify A=Q_gt*R_gt?  \033[1;m ", np.allclose(A, Q_gt @ R_gt))
+    print("\033[1;34;34m Verify A=Q_gt*R_gt  \033[1;m \n", np.allclose(A, Q_gt @ R_gt))
 
     if choose_mode=="1":
 
@@ -33,7 +33,7 @@ if __name__=='__main__':
         Q, R = Householder(A)
         print('\033[1;34;34m Q: \033[1;m \n'+ str(Q))
         print('\033[1;34;34m R: \033[1;m \n'+ str(R))
-        print("\033[1;34;34m Verify A=Q*R?  \033[1;m ", np.allclose(A, Q @ R))
+        print("\033[1;34;34m Verify A=Q*R  \033[1;m \n", np.allclose(A, Q @ R))
 
     if choose_mode=="2":
 
@@ -41,14 +41,14 @@ if __name__=='__main__':
         Q, R  = Gram_Schimidt(A)
         print('\033[1;34;34m Q: \033[1;m \n'+ str(Q))
         print('\033[1;34;34m R: \033[1;m \n'+ str(R))
-        print("\033[1;34;34m Verify A=Q*R?  \033[1;m ", np.allclose(A, Q @ R))
+        print("\033[1;34;34m Verify A=Q*R  \033[1;m \n", np.allclose(A, Q @ R))
 
     if choose_mode=="3":
         print('\033[1;32;32m Givens. \033[1;m')
         Q,R = Givens(A)
         print('\033[1;34;34m Q: \033[1;m \n'+ str(Q))
         print('\033[1;34;34m R: \033[1;m \n'+ str(R))
-        print("\033[1;34;34m Verify A=Q*R?  \033[1;m ", np.allclose(A, Q @ R))
+        print("\033[1;34;34m Verify A=Q*R  \033[1;m \n", np.allclose(A, Q @ R))
 
 
 
