@@ -17,3 +17,8 @@ where <img src="https://render.githubusercontent.com/render/math?math=Q=[Q_1, Q_
 python main.py
 ```
 
+## SSH
+```
+eval `ssh-agent -s`
+ssh-add ~/.ssh/id_rsa
+```
