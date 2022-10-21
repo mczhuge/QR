@@ -1,6 +1,5 @@
 import numpy as np
 
-<<<<<<< HEAD
 def Gram_Schimidt(A,verbose=False):
     m = A.shape[0]
     n = A.shape[1]
@@ -79,7 +78,6 @@ def Givens(A,verbose=False):
         print("The R matrix is:")
         print(R)
     return  Q,R
-=======
 
 # Zhihu's version is wrong
 def householder_reduce(matrix_a):
@@ -193,4 +191,3 @@ def qr_householder(A):
             Q[n:, i] = Q[n:, i] - (2 / (v@v)) * ((np.outer(v, v)) @ Q[n:, i])
 
     return [Q.transpose(), R]
->>>>>>> 1b21560f4d9f3c4d104e030df0a32429234f4f2b
