@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# Zhihu's version is wrong
 def householder_reduce(matrix_a):
     """
     Householder reduce for QR factorization.
@@ -75,6 +76,8 @@ def householder_reduce(matrix_a):
 
     return matrix_q, matrix_r
 
+
+# Github's version has bug
 def qr_householder(A):
     """ Compute QR decomposition of A using Householder reflection"""
 
