@@ -1,8 +1,8 @@
 # QR decomposition
 We can compute the QR decomposition by 
 * Householder transformations ✅
-* Gram Schmidt orthogonalization 
-* Givens transformations (TBD)
+* Gram Schmidt orthogonalization ✅
+* Givens transformations ✅)
 
 **Theorem:**
 
@@ -17,7 +17,7 @@ where <img src="https://render.githubusercontent.com/render/math?math=Q=[Q_1, Q_
 python main.py
 ```
 
-## Results
+## Result 1
 ```
 ###################################################################################### 
  We regrad the results calculated by SciPy as Ground Truth (GT). 
