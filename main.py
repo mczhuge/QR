@@ -1,48 +1,54 @@
 import numpy as np
-from qr import householder_reduce, qr_householder
+from qr import Gram_Schimidt, Householder, Givens
 from scipy import linalg
 
 np.set_printoptions(suppress=True)
 
 
+if __name__=='__main__':
 
-#np.random.seed(22)
-A = np.random.randn(5, 3)
-
-print('\033[1;32;32m ###################################################################################### \033[1;m')
-print('\033[1;32;32m We regrad the results calculated by SciPy as Ground Truth (GT). \033[1;m')
-print('\033[1;32;32m 1. [Q_gt, R_gt] are the right answers. \033[1;m ')
-print('\033[1;32;32m 2. [Q, R] are the answers by our writtern code. \033[1;m ')
-print('\033[1;32;32m 3. [Q_zhihu, R_zhihu] are the answers calculated by the code in Zhihu. \033[1;m ')
-print('\033[1;32;32m ###################################################################################### \033[1;m \n')
-
-print('\033[1;31;31m----- Matrix A: -----\033[1;m \n'+ str(A)+'\n')
-
-# Compute the QR decomposition
-Q, R = qr_householder(A)
-
-Q2, R2 = householder_reduce(A)
-
-# Using Scipy
-Q_gt, R_gt = linalg.qr(A)
+    #  np.random.seed(22)
+    A = np.random.randn(4, 4)
 
 
-# Compare Q with Q_gt
-print('\033[1;31;31m Q_gt: \033[1;m \n'+ str(Q_gt))
-print('\033[1;31;31m Q: \033[1;m \n'+ str(Q))
-print('\033[1;31;31m Q_zhihu: \033[1;m \n'+ str(Q2))
+    print('\033[1;32;32m ###################################################################################### \033[1;m')
+    print('\033[1;32;32m We regrad the results calculated by SciPy as Ground Truth (GT). \033[1;m')
+    print('\033[1;32;32m *. [Q_gt, R_gt] are the right answers. \033[1;m ')
+    print('\033[1;32;32m Press "1". [Q1, R1] are the answers calculated by Householder. \033[1;m ')
+    print('\033[1;32;32m Press "2". [Q2, R2] are the answers calculated by Gram-Schimidt. \033[1;m ')
+    print('\033[1;32;32m Press "3". [Q3, R3] are the answers calculated by Givens. \033[1;m ')
+    print('\033[1;32;32m ###################################################################################### \033[1;m \n')
+
+    choose_mode=input("please choose the mode:")
+
+    print('\033[1;32;32m SciPy GT. \033[1;m')
+    Q_gt, R_gt = linalg.qr(A)
+    print('\033[1;34;34m Q_gt: \033[1;m \n'+ str(Q_gt))
+    print('\033[1;34;34m R_gt: \033[1;m \n'+ str(R_gt))
+    print("\033[1;34;34m Verify A=Q_gt*R_gt?  \033[1;m ", np.allclose(A, Q_gt @ R_gt))
+
+    if choose_mode=="1":
+
+        print('\033[1;32;32m Householder. \033[1;m')
+        Q, R = Householder(A)
+        print('\033[1;34;34m Q: \033[1;m \n'+ str(Q))
+        print('\033[1;34;34m R: \033[1;m \n'+ str(R))
+        print("\033[1;34;34m Verify A=Q*R?  \033[1;m ", np.allclose(A, Q @ R))
+
+    if choose_mode=="2":
+
+        print('\033[1;32;32m Gram_Schimidt. \033[1;m')
+        Q, R  = Gram_Schimidt(A)
+        print('\033[1;34;34m Q: \033[1;m \n'+ str(Q))
+        print('\033[1;34;34m R: \033[1;m \n'+ str(R))
+        print("\033[1;34;34m Verify A=Q*R?  \033[1;m ", np.allclose(A, Q @ R))
+
+    if choose_mode=="3":
+        print('\033[1;32;32m Givens. \033[1;m')
+        Q,R = Givens(A)
+        print('\033[1;34;34m Q: \033[1;m \n'+ str(Q))
+        print('\033[1;34;34m R: \033[1;m \n'+ str(R))
+        print("\033[1;34;34m Verify A=Q*R?  \033[1;m ", np.allclose(A, Q @ R))
 
 
-# Compare R with R_gt
-print('\033[1;31;31m R_gt: \033[1;m \n'+ str(R_gt))
-print('\033[1;31;31m R: \033[1;m \n'+ str(R))
-print('\033[1;31;31m R_zhihu: \033[1;m \n'+ str(R2))
-
-# Verify A=QR
-print('\033[1;31;31m Compute A=Q_gt*R_gt: \033[1;m \n'+ str(Q @ R))
-print(np.allclose(A, Q_gt @ R_gt))
-print('\033[1;31;31m Compute A=QR: \033[1;m \n'+ str(Q @ R))
-print(np.allclose(A, Q @ R))
-print('\033[1;31;31m Compute A=Q_zhihu*R_zhihu: \033[1;m \n'+ str(Q @ R))
-print(np.allclose(A, Q2 @ R2))
 
