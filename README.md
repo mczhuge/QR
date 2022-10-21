@@ -2,7 +2,7 @@
 We can compute the QR decomposition by 
 * Householder transformations ✅
 * Gram Schmidt orthogonalization ✅
-* Givens transformations ✅)
+* Givens transformations ✅
 
 **Theorem:**
 
