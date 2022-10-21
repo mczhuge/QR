@@ -14,14 +14,6 @@ where <img src="https://render.githubusercontent.com/render/math?math=Q=[Q_1, Q_
 
 ## Example
 ```python
-np.random.seed(20)
-A = np.random.randn(5, 3)
-print('----- Matrix A: -----\n'+ str(A)+'\n')
-
-#compute the QR decomposition
-Q, R = qr_householder(A)
-
-print('\033[1;31;31m Compute A=QR: \033[1;m \n'+ str(Q @ R))
-print(np.allclose(A, Q @ R))
+python main.py
 ```
 
