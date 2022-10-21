@@ -1,8 +1,8 @@
 # QR decomposition
 We can compute the QR decomposition by 
-* Householder transformations, 
-* Givens transformations,
-* Gram Schmidt orthogonalization.
+* Householder transformations ✅
+* Givens transformations
+* Gram Schmidt orthogonalization 
 
 **Theorem:**
 
