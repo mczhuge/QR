@@ -77,7 +77,7 @@ def householder_reduce(matrix_a):
     return matrix_q, matrix_r
 
 
-# Github's version has bug
+# Github's version has bugs
 def qr_householder(A):
     """ Compute QR decomposition of A using Householder reflection"""
 
