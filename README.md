@@ -1,4 +1,4 @@
-# QR_decomposition
+# QR decomposition
 We can compute the QR decomposition by Householder transformations, Givens transformations or by Gram Schmidt orthogonalization.
 Here, we compute Householder QR.
 
