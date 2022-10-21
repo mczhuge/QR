@@ -24,7 +24,7 @@ python main.py
  1. [Q_gt, R_gt] are the right answers.  
  2. [Q, R] are the answers by our writtern code.  
  3. [Q_zhihu, R_zhihu] are the answers calculated by the code in Zhihu.  
- ######################################################################################  
+######################################################################################  
 
 ----- Matrix A: ----- 
 [[-1.74226396  0.6394264  -0.60030749]
