@@ -20,12 +20,7 @@ def Gram_Schimidt(A,verbose=False):
             print("cannot realiaze Gram_Schimidt decomposition")
         else:
             Q[:, i] = Q[:, i] / R[i, i]
-    if verbose:
-        print("The Gram_Schimidt decomposition of A is:")
-        print("The Q matrix is:")
-        print(Q)
-        print("The R matrix is:")
-        print(R)
+
     return  Q,R
 
 def Householder(A,verbose=False):
@@ -43,12 +38,6 @@ def Householder(A,verbose=False):
         T=np.dot(I,T)
         P=np.dot(I,P)
         Q=P.T
-    if verbose:
-        print("The householder_reduction of A is:")
-        print("The Q matrix is:")
-        print(Q)
-        print("The R matrix is:")
-        print(T)
     return  Q,T
 
 def Givens(A,verbose=False):
@@ -71,12 +60,6 @@ def Givens(A,verbose=False):
             P=np.dot(I,P)
             R=np.dot(I,R)
             Q=P.T
-    if verbose:
-        print("The Givens_reduction of A is:")
-        print("The Q matrix is:")
-        print(Q)
-        print("The R matrix is:")
-        print(R)
     return  Q,R
 
 # Zhihu's version is wrong
@@ -155,7 +138,7 @@ def householder_reduce(matrix_a):
     return matrix_q, matrix_r
 
 
-# Our version
+# Wrong version
 def qr_householder(A):
     """ Compute QR decomposition of A using Householder reflection"""
 
